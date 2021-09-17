@@ -16,11 +16,11 @@
     </div>
 
     <script>
-        //红白球共25，红黑共28，红球数量小于25
+        // 红、白球共25个
         for (red = 1; red < 25; red++) {
-            //红白球共25，白黑球共31，白球数量小于25
-            for (white = 1; white < 25; white++) {
-                //白黑球共31，红黑球共28，黑球数量小于28
+            // 白、黑球共31个
+            for (white = 1; white < 31; white++) {
+                // 红、黑球共28个
                 for (black = 1; black < 28; black++) {
                     if (red + white == 25 && white + black == 31 && red + black == 28) {
                         document.getElementById('red').value = red;
