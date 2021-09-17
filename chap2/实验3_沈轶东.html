@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实验3_沈轶东</title>
+</head>
+<script type="text/javascript">
+    function getShow(a) {
+        for (var i = 2; i <= a; i++) { //定义一个数值范围
+            var sum = true;    //定义所有数都为真
+            for (j = 2; j < i; j++) {
+                if (i % j == 0) {  //反证，如果这个数除他本身和1之外还有别的因数就为假
+                    sum = false;
+                }
+            }
+            if (sum) {
+                document.write(i + ',');//输出所有质数
+            }
+        }
+    }
+    getShow(100);
+    // 调用函数，并赋值a输出1 - 100之间的质数
+</script>
+
+<body>
+</body>
+
+</html>

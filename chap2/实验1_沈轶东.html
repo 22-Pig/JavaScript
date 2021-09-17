@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实验1_沈轶东</title>
+</head>
+
+<body>
+    <div>
+        <p>长方形的长：<input id="length" type="text"></p>
+        <p>长方形的宽：<input id="breadth" type="text"></p>
+        <p>长方形的周长：<input id="cir" type="text"></p>
+        <p>长方形的面积：<input id="area" type="text"></p>
+    </div>
+
+    <script>
+        var length = prompt('请输入长方形的长');
+        var breadth = prompt('请输入长方形的宽');
+        length = parseFloat(length) && Number(length);
+        breadth = parseFloat(breadth) && Number(breadth);
+        if (isNaN(length) && isNaN(breadth)) {
+            alert('请输入正确数字的长和宽！');
+        }
+        else if (isNaN(length)) {
+            alert('请输入正确数字的长！');
+        }
+        else if (isNaN(breadth)) {
+            alert('请输入正确数字的宽！');
+        }
+        else {
+            var cir = (length + breadth) * 2;
+            var area = length * breadth;
+            document.getElementById('length').value = length;
+            document.getElementById('breadth').value = breadth;
+            document.getElementById('cir').value = cir;
+            document.getElementById('area').value = area;
+        }
+    </script>
+</body>
+
+</html>

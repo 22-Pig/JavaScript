@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实验4_沈轶东</title>
+</head>
+
+<body>
+    <div>
+        <p>红球个数：<input id="red" type="text"></p>
+        <p>白球个数：<input id="white" type="text"></p>
+        <p>黑球个数：<input id="black" type="text"></p>
+    </div>
+
+    <script>
+        //红白球共25，红黑共28，红球数量小于25
+        for (red = 1; red < 25; red++) {
+            //红白球共25，白黑球共31，白球数量小于25
+            for (white = 1; white < 25; white++) {
+                //白黑球共31，红黑球共28，黑球数量小于28
+                for (black = 1; black < 28; black++) {
+                    if (red + white == 25 && white + black == 31 && red + black == 28) {
+                        document.getElementById('red').value = red;
+                        document.getElementById('white').value = white;
+                        document.getElementById('black').value = black;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
