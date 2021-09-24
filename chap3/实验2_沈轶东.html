@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实验2_沈轶东</title>
+</head>
+
+<script>
+    var arr = ['a', 'b', 'd', 'd', 'c', 'd', 'd'];
+    var search = 'd';
+    var res = []; //存放下标
+    var i = arr.indexOf(search);
+    while (i !== -1) {
+        res.push(i);
+        i = (i <= arr.length ? arr.indexOf(search, i + 1) : -1);
+    }
+    document.write("arr中元素" + search + '出现的次数:' + res.length + '<br>' + '对应的所有索引下标：' + res)
+</script>
+
+<body>
+
+</body>
+
+</html>

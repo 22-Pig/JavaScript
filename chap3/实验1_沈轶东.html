@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实验1_沈轶东</title>
+</head>
+<script>
+    window.onload = function filter() {
+        let arr = [1, 2, 3, 4, 2, 5, 6, 2, 7, 2];
+        let resArr = arr.filter(item => item !== 2);
+        const p = document.getElementById('res');
+        p.innerText = '新数组：' + resArr;
+    }
+    // console.log(resArDr);
+</script>
+
+<body>
+    <p>原数组：1, 2, 3, 4, 2, 5, 6, 2, 7, 2</p>
+    <p id="res"></p>
+</body>
+
+</html>
