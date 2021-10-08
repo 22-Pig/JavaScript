@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实验3_沈轶东</title>
+</head>
+
+<body>
+    <div>
+        原数组:65, 97, 5, 1, 145, 23
+    </div>
+    <script>
+        var arr = [65, 97, 5, 1, 145, 23];
+        var result = 0;
+        var element = prompt('请输入要查找的值:');
+        element = parseFloat(element) && Number(element);
+        function find() {
+            arr.forEach(v => {
+                console.log("123123");
+                if (v === element) {
+                    result = 1;
+                }
+                else {
+                    result = 0;
+                }
+            });
+        }
+        find();
+        if (result == 0) {
+            document.write("数组中未找到该元素");
+        }
+    </script>
+</body>
+
+</html>
