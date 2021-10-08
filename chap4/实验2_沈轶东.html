@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实验2_沈轶东</title>
+</head>
+
+<body>
+    数组为: 65,97,5,1,145,23
+</body>
+<script>
+    function getMaxNumber(arr) {
+        var max = arr[0];
+        for (var i = 0; i < arr.length; i++) {
+            if (max <= arr[i]) {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+
+    var arr = [65, 97, 5, 1, 145, 23];
+    var result = getMaxNumber(arr);
+    document.write("\n" + "其中最大元素是: " + result);
+</script>
+
+</html>

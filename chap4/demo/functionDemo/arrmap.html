@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>map函数的调用</title>
+</head>
+<body>
+	<script type="text/javascript">
+	var arr=[[1,2,3],[4,5,6],[7,8,9]];
+	var reverse=arr[0].map(function(col,i){
+		return arr.map(function(row){
+		  return row[i];
+		});
+	});
+	console.log(reverse);
+	</script>
+</body>
+</html>

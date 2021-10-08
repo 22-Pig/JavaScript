@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用call()方法调用</title>
+</head>
+<body>
+<p id="demo"></p>
+	<script type="text/javascript">
+	var myObject;
+	function myFunction(a,b){
+		return a*b;
+	}
+	myObject=myFunction.call(myObject,30,6);
+	document.getElementById('demo').innerHTML=myObject;
+	</script>
+</body>
+</html>

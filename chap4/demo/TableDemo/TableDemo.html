@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>生成自定义的表格</title>
+	<script type="text/javascript">
+	function table(row,col){
+		var show="";
+		show="<table align='center' border='1' width='600'>";
+		var bgcolor;
+		for(i=1;i<=row;i++){
+			if(i%2!=0)
+				{bgcolor="#FFFFFF";}
+			else{bgcolor="DDDDFF"}
+			show+="<tr bgcolor='"+bgcolor+"'>";
+			for(j=1;j<=col;j++){
+				show+="<td height='30'>第"+i+"行第"+j+"列</td>";}
+					show+="</tr>";
+		}	
+		show+="</table>";
+		return show;	
+	}
+
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		var result=table(6,5);
+		document.write(result);
+	</script>
+</body>
+</html>

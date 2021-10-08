@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包函数</title>
+</head>
+<body>
+<script type="text/javascript">
+
+function fn(){
+
+	var times=0;
+	
+	var c=function () {
+		return ++times;
+	};
+	return c;
+	
+}
+	var count=fn();
+
+	console.log(count());
+	console.log(count());
+	console.log(count());
+	console.log(count());
+	console.log(count());
+	console.log(count());
+	console.log(count());
+
+</script>
+	
+</body>
+</html>
