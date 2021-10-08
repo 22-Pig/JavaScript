@@ -14,22 +14,25 @@
     </div>
     <script>
         var arr = [65, 97, 5, 1, 145, 23];
-        var result = 0;
+        let result = arr.length;
         var element = prompt('请输入要查找的值:');
         element = parseFloat(element) && Number(element);
         function find() {
-            arr.forEach(v => {
-                console.log("123123");
+            arr.forEach((v, i) => {
                 if (v === element) {
-                    result = 1;
+                    result = i;
+                    console.log(result);
                 }
                 else {
-                    result = 0;
+                    console.log(result);
                 }
             });
         }
         find();
-        if (result == 0) {
+        if (result < arr.length) {
+            document.write("元素" + element + "在数组中的位置索引是:" + result);
+        }
+        else {
             document.write("数组中未找到该元素");
         }
     </script>
