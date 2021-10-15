@@ -7,38 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>实验3_沈轶东</title>
 </head>
-<script>
-    function getCurrentDate() {
-        var date = new Date();
-        var year = date.getFullYear(); //得到年份
-        var month = date.getMonth(); //得到月份
-        var date = date.getDate(); //得到日期
-
-        month = month + 1;
-        if (month < 10) month = '0' + month;
-        if (date < 10) date = '0' + date;
-        if (hour < 10) hour = '0' + hour;
-        var date = year + '年' + month + '月' + date + '日';
-        return date;
-    }
-
-    function getCurrentTime() {
-        var now = new Date();
-        var hour = now.getHours(); //得到小时
-        var minu = now.getMinutes(); //得到分钟
-        var sec = now.getSeconds(); //得到秒
-
-        if (hour < 10) hour = '0' + hour;
-        if (minu < 10) minu = '0' + minu;
-        if (sec < 10) sec = '0' + sec;
-        var time = hour + ':' + minu + ':' + sec;
-        return time;
-    }
-    document.write('今天是:' + getCurrentDate() + '现在是:' + getCurrentTime());
-</script>
 
 <body>
+    <div id='time'></div>
+    <script>
+        function getCurrentTime() {
+            var week, weekList;
+            week = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            var date = new Date();
+            year = date.getFullYear();
+            month = date.getMonth() + 1;
+            day = date.getDate();
+            hours = date.getHours();
+            minutes = date.getMinutes();
+            seconds = date.getSeconds();
+            weekList = date.getDay();
+            if (month < 10) month = '0' + month;
+            if (day < 10) day = '0' + day;
+            if (hours < 10) hours = '0' + hours;
+            if (minutes < 10) minutes = '0' + minutes;
+            if (seconds < 10) seconds = '0' + seconds;
+            document.getElementById('time').innerHTML = '今天是：' + year + '年' + month + '月' + day + '日' + '<br>' + '现在是：' + hours + ':' + minutes + ':' + seconds + '\t' + week[weekList];
 
+        };
+        setInterval('getCurrentTime()', 1000);
+    </script>
 </body>
 
 </html>
