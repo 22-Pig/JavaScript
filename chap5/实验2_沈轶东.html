@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实验2_沈轶东</title>
+</head>
+<script>
+    var min = prompt('请输入最小值：');
+    var max = prompt('请输入最大值：');
+    min = parseFloat(min) && Number(min);
+    max = parseFloat(max) && Number(max);
+
+    function randomNum(min, max) {
+        return Math.floor(Math.random() * (max - min) + min)
+    }
+
+    if (isNaN(min) && isNaN(max)) {
+        alert('请输入数字！');
+    }
+    else if (isNaN(min)) {
+        alert('请输入数字！');
+    }
+    else if (isNaN(max)) {
+        alert('请输入数字！');
+    }
+    else {
+        document.write(min + '-' + max + '范围内的随机整数是:' + randomNum(min, max));
+    }
+
+</script>
+
+<body>
+
+</body>
+
+</html>
