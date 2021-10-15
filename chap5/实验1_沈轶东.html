@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实验1_沈轶东</title>
+</head>
+<script>
+    var show = [];
+    function Book(name, type, price, publishing) {
+        this.name = name;
+        this.type = type;
+        this.price = price;
+        this.publishing = publishing;
+    }
+
+    var book = new Book("JavaScript前端开发", "JavaScript", "50", "人民邮电出版社");
+    for (var i in book) {
+        console.log(i);
+        show.push(i + ':' + book[i]);
+    }
+
+    function showInfo() {
+        document.write(show);
+    }
+    showInfo();
+</script>
+
+<body>
+
+</body>
+
+</html>
