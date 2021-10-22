@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图像边框border-image</title>
+	<style type="text/css">
+	.baseDiv{
+		float: left;
+		margin-left: 20px;
+		border:40px solid #CCC;
+	}
+	.firstDiv{
+		width: 200px;
+		height: 200px;
+		float: left
+	}
+	.secondDiv{
+		width: 120px;
+		height: 120px;
+		border-image:url(images/red1.jpg) 40;
+	}
+	.thirdDiv{
+		width: 120px;
+		height: 120px;
+		border-image: url(images/red2.jpg) 40/40px 35px 30px 25px;
+	}
+	.fourthDiv{
+		width: 120px;
+		height: 120px;
+		border-image: url(images/red2.jpg) 40 35 30 25/40px 35px 30px 25px;
+	}
+	.fifthDiv{
+		width: 210px;
+		height: 200px;
+		clear: both;
+		float: left;
+		border:40px solid #CCC;
+		border-image: url(images/red2.jpg) 40/40px repeat;
+		margin-top: 20px;
+	}
+	.sixDiv{
+		width: 210px;
+		height: 200px;
+		margin-top: 20px;
+		border-image: url(images/red2.jpg) 40/40px round;
+	}
+	.seventhDiv{
+		width: 200px;
+		height: 200px;
+		margin-top: 20px;
+		border-image: url(images/red2.jpg) 40/40px stretch;
+	}
+	</style>
+</head>
+<body>
+	<h3>图像边框Border-image</h3>
+	<div class="firstDiv">
+		<img src="images/red2.jpg" width="200"/>
+	</div>
+	<div class="baseDiv secondDiv"></div>
+	<div class="baseDiv thirdDiv"></div>
+	<div class="baseDiv fourthDiv"></div>
+	<div class="fifthDiv"></div>
+	<div class="baseDiv sixthDiv"></div>
+	<div class="baseDiv seventhDiv"></div>
+
+</body>
+</html>

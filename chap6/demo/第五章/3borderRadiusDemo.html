@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>圆角边框border-radius属性</title>
+</head>
+<style type="text/css">
+	div{
+		height: 100px;
+		width: 100px;
+		border-style: solid;
+		border-width: 4px;
+		position:absolute;
+	}
+	.firstDiv{
+		background-color: #CCC;
+		top:50px;
+		left: 20px;
+		border-radius: 10px 20px;
+	}
+	.secondDiv{
+		background-color: #999;
+		top:50px;
+		left: 160px;
+		border-radius: 10px 20px 30px;
+	}
+	.thirdDiv{
+		background-color: #CCC;
+		top:50px;
+		left: 300px;
+		border-radius: 10px 20px/30px 40px;
+	}
+	.fourthDiv{
+		background-color: #999;
+		top:50px;
+		left: 440px;
+		border-radius: 10px 20px 30px/50px 60px;
+	}
+</style>
+<body>
+	<h3>CSS圆角边框</h3>
+	<div class="firstDiv"></div>
+	<div class="secondDiv"></div>
+	<div class="thirdDiv"></div>
+	<div class="fourthDiv"></div>
+</body>
+</html>
