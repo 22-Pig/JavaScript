@@ -101,6 +101,7 @@
         setInterval(function () {
             if (--timeout <= 0) {
                 now = lamp[now.next];
+                console.log(now);
                 timeout = now.timeout;
                 lamp.changeStyle(now.style);
             }

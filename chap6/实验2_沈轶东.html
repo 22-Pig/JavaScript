@@ -45,11 +45,15 @@
         // 声明变量保存剩余的时间
         var d = h = m = s = 0;
         // 设置定时器，实现限时秒杀效果
-        var id = setInterval(seckill, 1000);
+        // var id = setInterval(seckill, 1000);
+        var id = setInterval('seckill()', 1000);
+        // var id = setInterval(seckill(), 1000);
         function seckill() {
             var nowtime = new Date();    // 获取当前时间
             // 获取时间差，单位秒
             var remaining = parseInt((endseconds - nowtime.getTime()) / 1000);
+            // console.log((endseconds - nowtime.getTime()) / 1000);
+            // console.log(remaining);
             // 判断秒杀是否过期
             if (remaining > 0) {
                 d = parseInt(remaining / 86400);        // 计算剩余天数（除以60*60*24取整，获取剩余的天数）
