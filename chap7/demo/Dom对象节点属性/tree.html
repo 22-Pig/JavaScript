@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>遍历文档树</title>
+</head>
+<body>
+	<h3 id="h1">三号标题</h3>
+	<b>加粗内容</b>
+	<form name="frm" action="#" method="get">
+	节点名称：<input type="text" id="na" /><br />
+	节点类型：<input type="text" id="ty" /><br />
+	节点的值：<input type="text" id="va" /><br />
+	<input type="button" value="父节点" onclick="txt=nodeS(txt,'parent');"/>
+	<input type="button" value="第一个子节点" onclick="txt=nodeS(txt,'firstChild');"/>
+	<input type="button" value="最后一个子节点" onclick="txt=nodeS(txt,'lastChild');"/>
+	<input name="button"  type="button" onclick="txt=nodeS(txt,'previousSibling');" value="前一个兄弟节点"/>
+	<input type="button" value="最后一个兄弟节点" onclick="txt=nodeS(txt,'nextSibling');"/>
+	<input type="button" value="返回根节点" onclick="txt=document.documentElement;txtUpdate(txt);"/>
+	</form>
+	<script type="text/javascript">
+	<!--
+	function txtUpdate(txt){
+		window.document.frm.na.value=txt.nodeName;
+		window.document.frm.ty.value=txt.nodeType;
+		window.document.frm.va.value=txt.nodeValue;
+	}
+	function nodeS(txt,nodeName){
+		switch(nodeName){
+			case "previousSibling":
+				if(txt.previousSibling){
+					txt=txt.previousSibling;
+				}else alert("无兄弟节点");
+				break;
+			case "nextSibling":
+				if(txt.nextSibling){
+					txt=txt.nextSibling;
+				}else alert("无兄弟节点");
+				break;
+			case "parent":
+				if(txt.parentNode){
+					txt=txt.parentNode;
+				}else alert("无父节点");
+				break;
+			case "firstChild":
+				if(txt.hasChildNodes()){
+					txt=txt.firstChild;
+				}else alert("无子节点");
+				break;
+			case "lastChild":
+				if(txt.hasChildNodes){
+					txt=txt.lastChild;
+				}else alert("无子节点");
+				break;
+		}
+		txtUpdate(txt);
+		return txt;
+	}
+	var txt=document.documentElement;
+	txtUpdate(txt);
+	//function ar(){
+	//	var n=document.documentElement;
+	//	alert(n.length);
+	//}
+	-->
+	</script>
+</body>
+</html>

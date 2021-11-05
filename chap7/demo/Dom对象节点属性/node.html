@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>访问指定节点名称、类型和值</title>
+</head>
+<body id="b1">
+	<h3>三号标题</h3>
+	<b>加粗内容</b>
+	<script type="text/javascript">
+	var by=document.getElementById("b1");
+	var str;
+	str="节点名称："+by.nodeName+"\n";
+	str+="节点类型："+by.nodeType+"\n";
+	str+="节点值："+by.nodeValue+"\n";
+	alert(str);
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>改变盒子大小</title>
+</head>
+<style>
+    .box {
+        width: 250px;
+        height: 250px;
+        background: url(./box.jpg);
+        margin: 0 auto;
+    }
+</style>
+
+<body>
+    <div id="box" class="box"></div>
+    <script>
+        var box = document.getElementById('box');
+        var i = 0;
+        box.onclick = function () {
+            ++i;
+            if (i % 2) {
+                this.style.width = '500px';
+                this.style.height = '500px';
+                this.innerHTML = '大大大';
+            }
+            else {
+                this.style.width = '250px';
+                this.style.height = '250px';
+                this.innerHTML = '小小小';
+            }
+        }
+    </script>
+</body>
+
+</html>

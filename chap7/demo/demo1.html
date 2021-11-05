@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文档对象和元素对象</title>
+</head>
+<body>
+	<div id="test"></div>
+
+	<div id="box">box</div>
+	<div class="bar">bar</div>
+	<div name="main">main</div>
+
+	<script type="text/javascript">
+	var test=document.getElementById("test");
+	console.log(test);
+	var test1=document;
+	console.log(test1.tagName);
+
+	console.log(document.getElementById("box"));
+	console.log(document.getElementsByClassName("bar"));
+	console.log(document.getElementsByTagName("div"));
+	console.log(document.getElementsByName("main"));
+	</script>
+</body>
+</html>
