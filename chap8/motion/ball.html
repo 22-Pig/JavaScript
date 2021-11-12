@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>缓动的小球</title>
+    <style>
+        #box {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            text-align: center;
+            background: chartreuse;
+            color: black;
+            border-radius: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">不要戳我!</div>
+    <script>
+        var obj = document.getElementById('box');
+        obj.onclick = function () {
+            animate(obj, { 'left': 1000, 'top': 500 });
+        };
+
+        function animate(obj, option) {
+            // 防止多次触发事件，重复开启定时器
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                // 元素对象移动的标志，true表示已完成
+                var flag = true;
+                for (var k in option) {
+                    // 获取指定元素当前属性值
+                    var leader = parseInt(getStyle(obj, k)) || 0;
+                    // 获取指定元素目标属性值
+                    var target = option[k];
+                    // 计算每次移动的步长
+                    var step = (target - leader) / 100;
+                    // 计算属性值
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    leader = leader + step;
+                    // 设置属性值
+                    obj.style[k] = leader + 'px';
+                    // 判断是否完成移动
+                    if (leader != target) {
+                        flag = false;
+                    }
+                }
+            }, 10);
+        }
+        function getStyle(obj, attr) {
+            if (window.getComputedStyle) {
+                // 标准浏览器
+                return window.getComputedStyle(obj, null)[attr];
+            } else {
+                // 早期版本IE的浏览器，IE6~8
+                return obj.currentStyle[attr];
+            }
+        }
+    </script>
+</body>
+
+</html>

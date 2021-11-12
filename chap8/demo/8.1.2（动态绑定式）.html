@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>动态绑定式</title>
+</head>
+
+<body>
+	<div id="t">test</div>
+	<script type="text/javascript">
+
+		var obj = document.getElementById('t');
+		t.onclick = function () {
+			console.log("four");
+		};
+		t.onclick = function () {
+			console.log("three");
+			this.style.color = 'red';
+		};
+
+	</script>
+</body>
+
+</html>

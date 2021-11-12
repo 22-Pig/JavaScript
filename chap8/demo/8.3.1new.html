@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    window.onload = function () {
+      ClickOn($('demo'));
+
+    };
+    function $(obj) {          // 根据id获取指定元素
+      return document.getElementById(obj);
+    }
+
+
+    function ClickOn(obj) {
+      obj.onclick = function () {
+        console.log('单击');
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+  <div id="demo">单击</div>
+
+
+
+</body>
+
+</html>
