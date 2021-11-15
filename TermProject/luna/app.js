@@ -1,36 +1,36 @@
 // 1、导入项目依赖
-// const express = require("express");
-// const bodyParser = require("body-parser");
+const express = require("express");
+const bodyParser = require("body-parser");
 
 // 导入koa模块
-const Koa = require('koa');
-const bodyParser = require('koa-bodyparser');
-const koaStatic = require('koa-static');
+// const Koa = require('koa');
+// const bodyParser = require('koa-bodyparser');
+// const koaStatic = require('koa-static');
 const logger = require("morgan");
 const favicon = require("serve-favicon");
 
 // 创建koa的实例app
-const app = new Koa();
+// const app = new Koa();
 
 // const login = require("./router/loginRouter");
 
-// const app = express();
+const app = express();
 
 
 // 打印日志
 app.use(logger("dev"));
 
 // 解析post方法
-app.use(bodyParser());
-/* app.use(bodyParser.urlencoded({ extended: false })); // 配置post的body模块
-app.use(bodyParser.json()); // 将数据转换为json */
+// app.use(bodyParser());
+app.use(bodyParser.urlencoded({ extended: false })); // 配置post的body模块
+app.use(bodyParser.json()); // 将数据转换为json
 
 // 根据不同功能划分模块使用路由
 // app.use(login);
 
 // 配置静态资源
-// app.use(express.static(__dirname + "/static"));
-app.use(koaStatic(__dirname + '/static'));
+app.use(express.static(__dirname + "/static"));
+// app.use(koaStatic(__dirname + '/static'));
 // 配置网页小icon
 app.use(favicon(__dirname + "/static/img/luna.png"));
 
