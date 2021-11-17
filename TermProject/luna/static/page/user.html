@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录/注册</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/user.css">
+
+    <script src="/js/user.js"></script>
+
+</head>
+
+<body>
+    <div class="login-main">
+        <div class="login-contain">
+            <img src="img/luna.png" class="logo" alt="logo">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                        aria-controls="home" aria-selected="true" name="home-tab">会员注册</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                        aria-controls="profile" aria-selected="false" name="profile-tab">会员登录</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <form class="form-signin">
+                        <p id="frmErr" class="text-danger"></p>
+                        <div class="form-group">
+                            <label for="userName">Username</label>
+                            <input type="text" name="userName" id="userName" class="form-control"
+                                placeholder="建议为手机号或者email，二选一">
+                            <p id="userNameErr" class="text-danger"></p>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" class="form-control">
+                                <p id="passwordErr" class="text-danger"></p>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputZip">Contact Way</label>
+                                <input type="text" class="form-control" id="contact">
+                                <p id="contactErr" class="text-danger"></p>
+                            </div>
+                        </div>
+
+
+                        <div class="checkbox mb-3">
+                            <input type="checkbox" value="remember-me" class="xieyi">我已阅读并同意相关服务条款和隐私政策
+                        </div>
+                        <button id="btnLogin" class="btn btn-primary btn-lg btn-block">Submit</button>
+
+                    </form>
+                </div>
+
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" name="profile">
+                    <form action="/login.do" method="post">
+                        <label for="userName1">Username</label>
+                        <input type="text" name="userName1" id="userName1" class="form-control">
+                        <label for="password1">Password</label>
+                        <input type="password" name="passWord1" id="passWord1" class="form-control">
+                        <br>
+                        <button id="btnLogin1" class="btn btn-primary btn-lg btn-block" onclick="login()">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+<script src="/js/jquery.js"></script>
+<script>
+    function login() {
+        // usersname = document.getElementById("userName").value
+        // password = document.getElementById("passWord").value
+
+        let userName1 = $("#userName1").val();
+        let passWord1 = $("#passWord1").val();
+        // console.log(userName1);
+        // console.log(passWord1);
+        $.ajax({
+            type: "post",
+            url: "/login.do",
+            data: {
+                userName: userName1,
+                passWord: passWord1
+            },
+            success(data) {
+                console.log("login#1" + data);
+                // window.href = '/shop.html';
+            }
+        })
+    }
+</script>
+
+</html>

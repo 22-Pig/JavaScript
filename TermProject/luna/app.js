@@ -9,13 +9,15 @@ const bodyParser = require("body-parser");
 const logger = require("morgan");
 const favicon = require("serve-favicon");
 
+
+const login = require("./router/loginRouter");
+
 // 创建koa的实例app
 // const app = new Koa();
 
 // const login = require("./router/loginRouter");
 
 const app = express();
-
 
 // 打印日志
 app.use(logger("dev"));
@@ -26,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: false })); // 配置post的body模块
 app.use(bodyParser.json()); // 将数据转换为json
 
 // 根据不同功能划分模块使用路由
-// app.use(login);
+app.use(login);
 
 // 配置静态资源
 app.use(express.static(__dirname + "/static"));
