@@ -7,19 +7,20 @@ module.exports = {
         let password = req.body.passWord;
 
         let loginArr = [username, password];
-        console.log("loginArr#1" + loginArr);
+        console.log("loginArr" + loginArr);
 
         loginDao.loginDB(loginArr, function (err, data) {
             if (err) {
-                console.log("login#1" + err);
                 return;
             }
             else {
-                console.log("loginCtrl:" + data.length);
+                // console.log("loginCtrl:" + data.length);
+                console.log("loginCtrl:" + data);
                 if (data.length == 1) {
                     resp.redirect("/page/shop.html");
-                    // resp.sendFile("/page/shop.html");
+                    // resp.send('1');
                 } else {
+                    // resp.send('0');
                     // resp.redirect("/page/shop.html");
                     // resp.redirect("/page/user.html");
                 }

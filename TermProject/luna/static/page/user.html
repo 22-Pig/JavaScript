@@ -89,6 +89,7 @@
 <script src="/js/jquery.js"></script>
 <script>
     function login() {
+        console.log('login启动');
         // usersname = document.getElementById("userName").value
         // password = document.getElementById("passWord").value
 
@@ -105,9 +106,17 @@
             },
             success(data) {
                 console.log("login#1" + data);
-                // window.href = '/shop.html';
+                /* console.log(typeof (data));
+                if (data == "1") {
+                    console.log('success');
+                    window.location.href = '/page/shop.html';
+                }
+                else {
+                    window.location.href = '/page/user.html';
+                } */
             }
         })
+        // $("#btnLogin1").attr('disabled', true);
     }
 </script>
 

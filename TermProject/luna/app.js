@@ -15,8 +15,6 @@ const login = require("./router/loginRouter");
 // 创建koa的实例app
 // const app = new Koa();
 
-// const login = require("./router/loginRouter");
-
 const app = express();
 
 // 打印日志
