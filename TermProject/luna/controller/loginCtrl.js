@@ -17,10 +17,10 @@ module.exports = {
                 // console.log("loginCtrl:" + data.length);
                 console.log("loginCtrl:" + data);
                 if (data.length == 1) {
-                    resp.redirect("/page/shop.html");
-                    // resp.send('1');
+                    // resp.redirect("/page/shop.html");
+                    resp.send('1');
                 } else {
-                    // resp.send('0');
+                    resp.send('0');
                     // resp.redirect("/page/shop.html");
                     // resp.redirect("/page/user.html");
                 }

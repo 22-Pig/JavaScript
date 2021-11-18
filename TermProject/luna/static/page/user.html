@@ -10,7 +10,7 @@
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/user.css">
 
-    <script src="/js/user.js"></script>
+    <script src="/js/register.js"></script>
 
 </head>
 
@@ -20,18 +20,18 @@
             <img src="img/luna.png" class="logo" alt="logo">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                    <a class="nav-link active text-info" id="home-tab" data-toggle="tab" href="#home" role="tab"
                         aria-controls="home" aria-selected="true" name="home-tab">会员注册</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                    <a class="nav-link text-info" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
                         aria-controls="profile" aria-selected="false" name="profile-tab">会员登录</a>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <form class="form-signin">
-                        <p id="frmErr" class="text-danger"></p>
+                        <!-- <p id="frmErr" class="text-danger"></p> -->
                         <div class="form-group">
                             <label for="userName">Username</label>
                             <input type="text" name="userName" id="userName" class="form-control"
@@ -50,24 +50,21 @@
                                 <p id="contactErr" class="text-danger"></p>
                             </div>
                         </div>
-
-
                         <div class="checkbox mb-3">
-                            <input type="checkbox" value="remember-me" class="xieyi">我已阅读并同意相关服务条款和隐私政策
+                            <input type="checkbox" value="remember-me" id="agree" class="xieyi">我已阅读并同意相关服务条款和隐私政策
                         </div>
-                        <button id="btnLogin" class="btn btn-primary btn-lg btn-block">Submit</button>
-
+                        <button id="btnRegister" class="btn btn-info btn-lg btn-block">Submit</button>
                     </form>
                 </div>
 
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" name="profile">
-                    <form action="/login.do" method="post">
+                    <form>
                         <label for="userName1">Username</label>
                         <input type="text" name="userName1" id="userName1" class="form-control">
                         <label for="password1">Password</label>
                         <input type="password" name="passWord1" id="passWord1" class="form-control">
                         <br>
-                        <button id="btnLogin1" class="btn btn-primary btn-lg btn-block" onclick="login()">Login</button>
+                        <button id="btnLogin" class="btn btn-info btn-lg btn-block">Login</button>
                     </form>
                 </div>
             </div>
@@ -88,15 +85,10 @@
 
 <script src="/js/jquery.js"></script>
 <script>
-    function login() {
-        console.log('login启动');
-        // usersname = document.getElementById("userName").value
-        // password = document.getElementById("passWord").value
-
+    $('#btnLogin').click(function () {
         let userName1 = $("#userName1").val();
         let passWord1 = $("#passWord1").val();
-        // console.log(userName1);
-        // console.log(passWord1);
+        console.log(userName1 + passWord1);
         $.ajax({
             type: "post",
             url: "/login.do",
@@ -106,18 +98,17 @@
             },
             success(data) {
                 console.log("login#1" + data);
-                /* console.log(typeof (data));
+                console.log(typeof (data));
                 if (data == "1") {
                     console.log('success');
-                    window.location.href = '/page/shop.html';
+                    $(window).attr('location', '/page/shop.html');
                 }
                 else {
                     window.location.href = '/page/user.html';
-                } */
+                }
             }
         })
-        // $("#btnLogin1").attr('disabled', true);
-    }
+    });
 </script>
 
 </html>

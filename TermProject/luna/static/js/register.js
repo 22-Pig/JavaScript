@@ -40,7 +40,7 @@ function onLogin() {
 
 function onFocusOrInput(evt) {
     const obj = evt.target;
-    frm.pFrmErr.innerText = '';
+    // frm.pFrmErr.innerText = '';
     var reg1 = /^(?:13\d|15\d|18[123456789])-?\d{5}(\d{3}|\*{3})$/;
     var reg2 = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
     if (obj === frm.iptUserName) {
@@ -64,7 +64,7 @@ function onFocusOrInput(evt) {
 
 function onFocusOrInput1(evt) {
     const obj = evt.target;
-    frm.pFrmErr.innerText = '';
+    // frm.pFrmErr.innerText = '';
     if (obj === frm.iptPassword) {
         frm.pPasswordErr.innerText = '';
         var rep3 = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{6,}$/;
@@ -83,7 +83,7 @@ function onFocusOrInput1(evt) {
 
 function onFocusOrInput2(evt) {
     const obj = evt.target;
-    frm.pFrmErr.innerText = '';
+    // frm.pFrmErr.innerText = '';
     if (obj === frm.iptContact) {
         frm.pContactErr.innerText = '';
         const contact = frm.iptContact.value;
@@ -96,11 +96,50 @@ function onFocusOrInput2(evt) {
     }
 }
 
+function checkbox() {
+    var val = document.getElementById('agree');
+    console.log(val.checked);
+    if (!val.checked) {
+        alert("请先阅读并同意相关服务！");
+    }
+    else {
+        register();
+    }
+}
+
+function register() {
+    let userName = $("#userName").val();
+    let passWord = $("#password").val();
+    let messAge = $("#contact").val();
+
+    $.ajax({
+        type: "post",
+        url: "/register.do",
+        data: {
+            userName: userName,
+            passWord: passWord,
+            messAge: messAge
+        },
+        success(data) {
+            console.log("register" + data);
+            if (data) {
+                console.log('success');
+                window.location.href = '/page/shop.html';
+            }
+            else {
+                console.log('defeat');
+                window.location.href = '/page/user.html';
+            }
+        }
+    })
+}
 
 window.onload = function () {
-    const btnLogin = document.getElementById('btnLogin');
-    btnLogin.addEventListener('click', function (evt) {
-        onLogin();
+    const btnRegister = document.getElementById('btnRegister');
+    btnRegister.addEventListener('click', function (evt) {
+        // onLogin();
+        checkbox();
+        // register();
         evt.returnValue = false;
     });
 
@@ -133,5 +172,5 @@ window.onload = function () {
     frm.pUserNameErr = document.getElementById('userNameErr');
     frm.pPasswordErr = document.getElementById('passwordErr');
     frm.pContactErr = document.getElementById('contactErr');
-    frm.pFrmErr = document.getElementById('frmErr');
+    // frm.pFrmErr = document.getElementById('frmErr');
 }

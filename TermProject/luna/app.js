@@ -11,6 +11,7 @@ const favicon = require("serve-favicon");
 
 
 const login = require("./router/loginRouter");
+const register = require("./router/registerRouter");
 
 // 创建koa的实例app
 // const app = new Koa();
@@ -27,6 +28,7 @@ app.use(bodyParser.json()); // 将数据转换为json
 
 // 根据不同功能划分模块使用路由
 app.use(login);
+app.use(register);
 
 // 配置静态资源
 app.use(express.static(__dirname + "/static"));
