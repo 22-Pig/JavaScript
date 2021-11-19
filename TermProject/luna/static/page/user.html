@@ -54,6 +54,7 @@
                             <input type="checkbox" value="remember-me" id="agree" class="xieyi">我已阅读并同意相关服务条款和隐私政策
                         </div>
                         <button id="btnRegister" class="btn btn-info btn-lg btn-block">Submit</button>
+                        <p class="text-muted text-center">&copy; 2021-2022</p>
                     </form>
                 </div>
 
@@ -65,6 +66,7 @@
                         <input type="password" name="passWord1" id="passWord1" class="form-control">
                         <br>
                         <button id="btnLogin" class="btn btn-info btn-lg btn-block">Login</button>
+                        <p class="text-muted text-center">&copy; 2021-2022</p>
                     </form>
                 </div>
             </div>
@@ -101,7 +103,7 @@
                 console.log(typeof (data));
                 if (data == "1") {
                     console.log('success');
-                    $(window).attr('location', '/page/shop.html');
+                    $(window).attr('location', '/page/home.html');
                 }
                 else {
                     window.location.href = '/page/user.html';

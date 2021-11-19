@@ -124,7 +124,7 @@ function register() {
             console.log("register" + data);
             if (data) {
                 console.log('success');
-                window.location.href = '/page/shop.html';
+                window.location.href = '/page/home.html';
             }
             else {
                 console.log('defeat');

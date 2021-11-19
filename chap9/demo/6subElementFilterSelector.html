@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery子元素过滤选择器</title>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+		<table id="dataTable">
+			<tr><td>序号</td><td>商品名称</td><td>价格</td><td>库存数量</td><td>上架数量</td><td>保质期</td></tr>
+			<tr><td>1</td><td>大宝护肤霜</td><td>25</td><td>100</td><td>40</td><td>2017-3-6</td></tr>
+			<tr><td>2</td><td>海飞丝洗发水</td><td>19</td><td>100</td><td>2</td><td>2017-6-6</td></tr>
+			<tr><td>3</td><td>迪奥漾淡香氛</td><td>180</td><td>30</td><td>15</td><td>2021-3-6</td></tr>
+			<tr><td>4</td><td>飞利浦剃须刀</td><td>560</td><td>100</td><td>60</td><td>2021-3-6</td></tr>
+			<tr><td colspan="3">共计4件商品</td></tr>
+		</table>
+		<ul>
+			<span>商品名称</span>
+			<li>大宝护肤霜</li>
+			<li>海飞丝洗发水</li>
+			<li>迪奥漾淡香氛</li>
+			<li>飞利浦剃须刀</li>
+			<span>共计：4种商品</span>
+		</ul>
+		<ul>
+			<span>商品名称</span>
+			<li>飞利浦剃须刀</li>
+			<span>共计：4种商品</span>
+		</ul>
+	
+<script type="text/javascript">
+$(function(e){
+	$("#dataTable tr td:first-child").css("background-color","#CCC");
+	$("#dataTable tr td:last-child").css("background-color","#AAA");
+	$("#dataTable tr td:only-child").css("border","2px solid #666");
+	$("td:parent").css("background-color","#dddddd");
+	$("td:empty").css("background-color","white");
+	$("td:has('span')").css("background-color","gray");
+});
+</script>
+</body>
+</html>

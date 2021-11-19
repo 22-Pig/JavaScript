@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery表单选择器</title>
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<style type="text/css">
+		*{margin-top:5px;}
+		div{height:320px;}
+		#formDiv{float:left;padding:4px;width:480px;border:1px solid #666;}
+		#showResult{float: right;padding: 4px;width: 200px;border: 1px solid #666;}
+	</style>
+</head>
+<body>
+	<form id="myform" action="#">
+	用户ID：<input type="text" value="U0001" disabled /><br/>
+	用户名：<input type="tel" name="userName" value="请输入用户名" /><br/>
+	密码：  <input type="password" name="userPwd" value="请输入密码"/><br/>
+	部门：  <input type="radio" name="userDept" value="华北销售部"/>华北销售部
+	<input type="radio" name="userDept" value="华东销售部"/>华东销售部
+	<input type="radio" name="userDept" value="东北销售部" checked />东北销售部
+	<input type="radio" name="userDept" value="港销澳售部"/>港澳销售部<br />
+	验证码：<input type="text" name="validateCode" disabled/><br/>
+	个人照片：<input type="file" /><br/>
+	销售类型：<input type="checkbox" name="goodsType" value="红酒"/>红酒
+	<input type="checkbox" name="goodsType" value="饮料" />饮料
+	<input type="checkbox" name="goodsType" value="运动装" checked />运动装
+	<input type="checkbox" name="goodsType" value="太阳伞" />太阳伞<br/>
+	<input type="submit" value="提交"/>
+	<input type="button" value="重置"/><br/>
+    </form>
+    </div>
+    <div id="showResult"></div>
+    <script type="text/javascript">
+    $(function(e){
+    	var result="统计结果如下：<hr/>";
+    	result+="<br/>&lt;input&gt;标签的数量为："+$(":input").length;
+    	result+="<br/>单行文本框的数量为："+$(":text").length;
+    	result+="<br/>密码框的数量为："+$(":password").length;
+    	result+="<br/>单选按钮的数量为："+$(":radio").length;
+    	result+="<br/>上传文本域的数量为："+$(":file").length;
+    	result+="<br/>复选框的数量为："+$(":checkbox").length;
+    	result+="<br/>提交按钮的数量为："+$(":submit").length;
+    	result+="<br/>普通按钮的数量为："+$(":button").length;
+    	$("#showResult").html(result);
+    });
+    </script>
+</body>
+</html>

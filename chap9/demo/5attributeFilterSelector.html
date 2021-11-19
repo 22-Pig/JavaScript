@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery属性过滤选择器</title>
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+	<div id="topDiv" title="top" desc="页面顶部">页面顶部</div>
+	<div id="menuDiv" title="menu">菜单栏</div>
+	<div id="mainDiv">主题区</div>
+	<div id="leftDiv" title="mainLeft">左侧栏</div>
+	<div id="rightDiv" title="mainRight">右侧栏</div>
+	<div id="bottomDiv" title="bottom" desc="页面底部">底部栏</div>
+	<div id="advDiv" title="advbottom">广告栏</div>
+		
+<script type="text/javascript">
+$(function(e){
+	$("div[title]").css({width:"300px",height:"30px",margin:"3px"});
+	$("div[title=menu]").css("border","2px solid #AAA");
+	$("div[title!=menu]").css("background-color","#DDD");
+	$("div[title^=main]").css("margin-left","20px");
+	$("div[title$=bottom]").css("padding-left","15px");
+	$("div[title*=o]").css("font-style","italic");
+	$("div[title*=o][desc]").css("font-weight","bold");
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery基本操作--样式操作</title>
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<style type="text/css">
+		.titleClass{font-size: 20px;font-weight: bold;}
+		.baseClass{padding-left: 20px;background-color:#EEE;}
+		.fontSize{font-size: 16px;}
+		.fontColor{color: #363;}
+		.p0{color: red;}
+		.p1{color: blue;}
+		.p2{color: green;}
+	</style>
+</head>
+<body>
+	<p id="articleTitle">jQuery操作元素样式</p><hr/>
+	<p title="desc">可以使用attr()方法操作元素的class属性，以获取或改变标签的样式。</p>
+	<p title="desc">除此之外，jQuery还提供了addClass()、removeClass()方法</p>
+	<p title="desc" id="lastContent">使用addClass()为页面元素追加样式。</p>
+	<input type='button' value="移除样式" onclick="removeClass()"/>
+	<script type="text/javascript">
+	$(function(e){
+		$("#articleTitle").addClass("titleClass");
+		$("p[title='desc']").addClass("baseClass fontColor");
+		$("p[title='desc']").addClass(function(index,oldClass){
+			console.log(index+oldClass);
+			return 'p'+index;
+		});
+	});
+	function removeClass(){
+		$("p").removeClass();
+	}
+	</script>
+</body>
+
+</html>
