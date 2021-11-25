@@ -8,17 +8,217 @@
     <title>home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="Flat-UI-master/dist/css/flat-ui.min.css">
+    <!-- <link rel="stylesheet" href="bootstrap-4.6.1/css/bootstrap.min.css"> -->
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light">
-        <div class="container">
-            <div class="navbar-header">
-                <a href="index.html" class="navbar-brand">小小书店</a>
-            </div>
+    <!-- 导航栏 -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="navbar-header">
+            <a href="" class="navbar-brand"></a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="categories.html" class="nav-link disabled">全部分类</a></li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">登录/注册</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ">购物车</a>
+                </li>
+            </ul>
+        </div>
+    </nav> -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="index.html">小小书店</a>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">全部分类</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">登录/注册</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">购物车</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </div>
     </nav>
+    <!-- 网页内容 -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- 左侧导航栏 -->
+            <div class="col-md-2" style="height: auto; background-color: #1c232f;">
+                <div class="text-center" style="height: 50px; line-height: 50px;margin-top: 15px;">
+                    <h3 class="text-light">图书分类<span class="badge badge-secondary">New</span></h3>
+                </div>
+                <!-- <div class="row"> -->
+                <div style="height:1px;background-color: black;width: 100%;"></div>
+                <!-- </div> -->
+                <div class="accordion" id="accordionExample">
+                    <div class="card text-center">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-center" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    教育
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordionExample">
+                            <div class="list-group">
+                                <!-- <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                                    The current link item
+                                </a> -->
+                                <a href="#" class="list-group-item list-group-item-action">教材</a>
+                                <a href="#" class="list-group-item list-group-item-action">外语</a>
+                                <a href="#" class="list-group-item list-group-item-action">考试</a>
+                                <a href="#" class="list-group-item list-group-item-action">中小学教辅</a>
+                                <a href="#" class="list-group-item list-group-item-action">工具书</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card text-center">
+                        <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-center collapsed" type="button"
+                                    data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                    aria-controls="collapseTwo">
+                                    小说
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse " aria-labelledby="headingTwo"
+                            data-parent="#accordionExample">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action">中国当代小说</a>
+                                <a href="#" class="list-group-item list-group-item-action">中国古典小说</a>
+                                <a href="#" class="list-group-item list-group-item-action">外国小说</a>
+                                <a href="#" class="list-group-item list-group-item-action">世界名著</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card text-center">
+                        <div class="card-header" id="headingThree">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-center collapsed" type="button"
+                                    data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    文艺
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse " aria-labelledby="headingThree"
+                            data-parent="#accordionExample">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action">文学</a>
+                                <a href="#" class="list-group-item list-group-item-action">传记</a>
+                                <a href="#" class="list-group-item list-group-item-action">艺术</a>
+                                <a href="#" class="list-group-item list-group-item-action">摄影</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card text-center">
+                        <div class="card-header" id="headingFour">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-center collapsed" type="button"
+                                    data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                                    aria-controls="collapseFour">
+                                    青春文学 /动漫 · 幽默
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseFour" class="collapse " aria-labelledby="headingFour"
+                            data-parent="#accordionExample">
+                            <div class="list-group">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card text-center">
+                        <div class="card-header" id="headingFive">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-center collapsed" type="button"
+                                    data-toggle="collapse" data-target="#collapseFive" aria-expanded="false"
+                                    aria-controls="collapseFive">
+                                    童书
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                            data-parent="#accordionExample">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action">0-2</a>
+                                <a href="#" class="list-group-item list-group-item-action">3-6</a>
+                                <a href="#" class="list-group-item list-group-item-action">7-10</a>
+                                <a href="#" class="list-group-item list-group-item-action">11-14</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card text-center">
+                        <div class="card-header" id="headingSix">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-center collapsed" type="button"
+                                    data-toggle="collapse" data-target="#collapseSix" aria-expanded="false"
+                                    aria-controls="collapseSix">
+                                    人文社科
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
+                            data-parent="#accordionExample">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action">历史</a>
+                                <a href="#" class="list-group-item list-group-item-action">古籍</a>
+                                <a href="#" class="list-group-item list-group-item-action">哲学/宗教</a>
+                                <a href="#" class="list-group-item list-group-item-action">文化</a>
+                                <a href="#" class="list-group-item list-group-item-action">政治/军事</a>
+                                <a href="#" class="list-group-item list-group-item-action">法律</a>
+                                <a href="#" class="list-group-item list-group-item-action">社会科学</a>
+                                <a href="#" class="list-group-item list-group-item-action">心理学</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 右侧主要内容 -->
+            <div class="col-md-10" style="height: auto; background-color: #d5f03e;">
+                <!-- <div class="main">主体部分</div> -->
+            </div>
+        </div>
+    </div>
 </body>
+<script>
+    $(function () {
+        $("ul.accordion li span").on('click', function () {
+            $(this).parent().siblings().removeClass('selected').find('div').hide();
+            $(this).parent().addClass('selected');
+            $(this).next().slideDown(500);
+        });
+    });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
