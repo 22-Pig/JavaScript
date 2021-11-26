@@ -1,21 +1,4 @@
-.row {
-    margin-top: 20px;
-}
-
-.center {
-    text-align: center;
-}
-
-.card {
-    margin-top: 10px;
-}
-
-#dropdown-menu li {
-    padding-bottom: 10px;
-    line-height: 30px;
-}
-
-.footer {
-    margin-bottom: 0;
-    margin-top: 30px;
+.page {
+    width: 100vw;
+    height: 100vh;
 }
