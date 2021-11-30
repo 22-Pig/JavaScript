@@ -17,7 +17,7 @@
 <body>
     <div class="login-main">
         <div class="login-contain">
-            <img src="img/luna.png" class="logo" alt="logo">
+            <img src="img/luna.png" id="logo" class="logo" alt="logo">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active text-info" id="home-tab" data-toggle="tab" href="#home" role="tab"
@@ -110,6 +110,9 @@
                 }
             }
         })
+    });
+    $("#logo").click(function () {
+        location.href = 'new.html';
     });
 </script>
 

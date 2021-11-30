@@ -4,11 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>404</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <style type="text/css">
+        #page {
+            width: 100vw;
+            height: 100vh;
+            /* display: flex; */
+            position: absolute;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>我是404页面!</h1>
+    <div class="container-fluid">
+        <div class="text-center row justify-content-center align-items-center" id="page">
+            <img src="/img/404.png" style="height: 400px;" alt="">
+            <h2>The page you were looking for doesn't exist.</h2>
+            <p class="font-weight-normal">You may have mistyped the address or the page may have moved.</p>
+            <a href="new.html">
+                <button type="button" class="btn btn-info">GO HOME</button>
+            </a>
+        </div>
+    </div>
 </body>
 
 </html>
