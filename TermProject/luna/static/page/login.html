@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登录页面</title>
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/popup.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="/js/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -24,9 +26,11 @@
             </form>
         </div>
     </div>
+
+    
+
 </body>
 
-<script src="../js/jquery-3.5.1.js"></script>
 <script>
     function login() {
         // usersname = document.getElementById("userName").value
@@ -47,6 +51,30 @@
                 console.log("login#1" + data);
             }
         })
+    }
+
+    var popupTime = 0;
+    var popupNum;
+    $(function () {
+        popupNum = $("#case").attr("data-num");
+        popup()
+
+        $("#close").click(function () {
+            $("#case").animate({ height: "hide" }, 800);
+            if (popupTime != popupNum) {
+                setTimeout(popup, 1000);
+            }
+
+        });
+    })
+
+    function popup() {
+        if (popupTime != popupNum) {
+            $("#case").animate({ height: "show" }, 800);
+            //文本输出
+            // $(".text").html(popupTime);
+            popupTime++;
+        }
     }
 </script>
 

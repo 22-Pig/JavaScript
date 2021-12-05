@@ -1,0 +1,46 @@
+.t_p {
+    padding: 0px;
+    margin: 0px;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+/*右下角弹出*/
+.dingwe {
+    position: relative;
+}
+
+.tipfloat {
+    display: none;
+    z-index: 999;
+    border: 1px #28a745 solid;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 364px;
+    height: 258px;
+    background: #fff;
+}
+
+.tipfloat_bt {
+    height: 50px;
+    line-height: 50px;
+    background: #28a745;
+    padding: 0px 20px;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* .text {
+            font-size: 18px;
+            color: #333;
+            text-align: center;
+            padding: 30px 0;
+            line-height: 26px;
+        } */

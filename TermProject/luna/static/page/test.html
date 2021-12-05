@@ -9,37 +9,50 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <style type="text/css">
-        * {
+        /* * {
             padding: 0px;
             margin: 0px;
             font-family: "微软雅黑";
-        }
+        } */
 
-        dd,
+        /*         dd,
         dl,
-        dt,
-        em,
-        i,
-        p,
+        dt, */
+        /* em, */
+        /* i, */
+        /* p,
         textarea,
         a,
         div {
             padding: 0px;
             margin: 0px;
+        } */
+
+        .t_p {
+            padding: 0px;
+            margin: 0px;
         }
 
-        img {
+        /* img {
             border: 0px;
-        }
+        } */
 
-        ul,
+        /* ul,
         li {
             padding: 0px;
             margin: 0px;
             list-style: none;
             float: left
-        }
+        } */
 
+        /* img {
+            border: 0px;
+        } */
+
+        /* div {
+            padding: 0px;
+            margin: 0px;
+        } */
         .fl {
             float: left
         }
@@ -56,67 +69,57 @@
         .tipfloat {
             display: none;
             z-index: 999;
-            border: 1px #8e9cde solid;
+            border: 1px #28A745 solid;
             position: absolute;
             bottom: 0px;
-            right: 17px;
-            width: 388px;
-            height: 268px;
+            right: 0px;
+            width: 364px;
+            height: 258px;
             background: #fff
         }
 
         .tipfloat_bt {
-            height: 49px;
-            line-height: 49px;
-            background: #8e9cde;
+            height: 50px;
+            line-height: 50px;
+            background: #28A745;
             padding: 0px 20px;
             font-size: 18px;
             color: #fff;
         }
 
-        .xx_nrong {
+        /* .text {
             font-size: 18px;
             color: #333;
             text-align: center;
             padding: 30px 0;
             line-height: 26px;
-        }
+        } */
     </style>
     <script src="/js/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-    <div class="card">
-        <h5 class="card-header">Featured</h5>
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
     <!--弹出信息 右下角-->
-    <div class="tipfloat" id="case" data-num="1">
-        <p class="tipfloat_bt">
-            <span class="fl">消息</span>
-            <span class="fr close"><img src="/img/guanbi.png"></span>
+    <div class="tipfloat" id="case" data-num="2">
+        <p class="tipfloat_bt t_p">
+            <span class="fl">装备回收/交易自由</span>
+            <span class="fr" id="close"><img src="/img/close.png"></span>
         </p>
         <div class="ranklist">
-            <div class="xx_nrong">
-                aaaaa
+            <div class="text">
+                <a href="Game2048.html"><img src="/img/greengu1.png" style="max-height: 100%;" alt=""></a>
             </div>
         </div>
-
     </div>
     <script>
         var popupTime = 0;
         var popupNum;
         $(function () {
-            // popupNum = $(".tipfloat").attr("data-num");
             popupNum = $("#case").attr("data-num");
             popup()
 
-            $(".close").click(function () {
-                $(".tipfloat").animate({ height: "hide" }, 800);
+            $("#close").click(function () {
+                $("#case").animate({ height: "hide" }, 800);
                 if (popupTime != popupNum) {
                     setTimeout(popup, 1000);
                 }
@@ -126,10 +129,9 @@
 
         function popup() {
             if (popupTime != popupNum) {
-                $(".tipfloat").animate({ height: "show" }, 800);
-
-                //文本输出可删除
-                // $(".xx_nrong").html(popupTime);
+                $("#case").animate({ height: "show" }, 800);
+                //文本输出
+                // $(".text").html(popupTime);
                 popupTime++;
             }
         }
