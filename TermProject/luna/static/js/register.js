@@ -128,6 +128,7 @@ function register() {
             }
             else {
                 console.log('defeat');
+                alert('注册失败,此用户名已存在！')
                 window.location.href = '/page/user.html';
             }
         }

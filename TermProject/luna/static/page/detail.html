@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品详情</title>
+    <!-- <style>
+        .box {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #ccc;
+            position: relative
+        }
+
+        .big {
+            width: 240px;
+            height: 240px;
+            position: absolute;
+            top: 0;
+            left: 155px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            display: none
+        }
+
+        .mask {
+            width: 75px;
+            height: 75px;
+            background: rgba(255, 255, 0, .4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: move;
+            display: none
+        }
+
+        .small {
+            position: relative
+        }
+
+        .box img {
+            vertical-align: top
+        }
+
+        #bigBox img {
+            position: absolute
+        }
+    </style> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/detail.css">
+    <script src="/js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="home.html">小小书店</a>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="choose.html">全部分类</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="user.html">登录/注册</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="cart.html">购物车</a>
+                </li>
+            </ul>
+            <span class=" navbar-text" id='time' style="margin-right: 20px;"> </span>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <main role="main" class="container">
+        <!-- <div class="my-3 p-3 bg-white rounded shadow-sm" style="background-color: rgb(225, 230, 215);"> -->
+        <br>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="box" id="box">
+                        <div id="smallBox" class="small">
+                            <img src="/img/青春励志s1.jpg">
+                            <div id="mask" class="mask"></div>
+                        </div>
+                        <div id="bigBox" class="big">
+                            <img id="bigImg" src="/img/青春励志b1.png">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <div class="col-sm">
+                    <h5 class="font-weight-bold">拆掉思维里的墙 随机享签名版 俞敏洪倾情作序</h5>
+                    <p>【樊登、俞敏洪、张德芬、傅盛、彭凯平、史欣悦推荐】 “个人跃迁三部曲” 重磅启航 思维可拆墙，人生能跃迁！</p>
+                    <form class="form-row">
+                        <dl class="row">
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">作者:</th>
+                                        <td>古典</td>
+                                        <th>出版社:</th>
+                                        <td>中信出版社</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">出版时间:</th>
+                                        <td>2021年10月</td>
+                                        <td colspan="2" class="font-italic font-weight-bold text-warning">励志新书榜排名30位
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <dt class="col-sm-3">价格</dt>
+                            <dd class="col-sm-8" style="margin-left: 20px;">¥40.70</dd>
+
+                            <dt class="col-sm-3">配送至</dt>
+                            <dd class="col-sm-9 d-flex">
+                                <div class="col-sm-4">
+                                    <select name="province" id="province" class="form-control">
+                                        <option value="-1">请选择</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-4">
+                                    <select name="city" id="city" class="form-control">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-4">
+                                    <select name="country" id="country" class="form-control">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <!-- </div> -->
+                            </dd>
+
+
+                            <dt class="col-sm-3">商品数量</dt>
+                            <dd class="col-sm-9">
+                                <!-- <div class="col-auto my-1"> -->
+                                <div class="col-md-5 d-flex " id="gooods-count">
+                                    <a id="min" class="btn btn-outline-info">-</a>
+                                    <input type="text" value="1" class="form-control text-center" id="cartNum"
+                                        maxlength="3">
+                                    <a id="max" class="btn btn-outline-info">+</a>
+                                </div>
+                                <!-- </div> -->
+                            </dd>
+                        </dl>
+                        <div class="row">
+                            <div class="col-sm">
+                                <input type="button" class=" btn btn-danger btn-lg "
+                                    onclick="location.href = 'cart.html'" value="加入购物车">
+                            </div>
+                            <div class="col-sm">
+                                <input type="submit" class=" btn btn-info btn-lg" value="购买">
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- </div> -->
+    </main>
+    <script src="/js/detail.js"></script>
+    <script>
+        // 需求：鼠标经过盒子 显示遮罩和大图 鼠标移动的时候 让遮罩跟着移动让大图按照比例移动
+        function $(id) {    // 根据id值获取元素对象
+            return document.getElementById(id);
+        }
+
+        // 鼠标经过盒子 显示遮罩和大图 
+        $('smallBox').onmouseover = function () {
+            $('mask').style.display = 'block';
+            $('bigBox').style.display = 'block';
+        };
+        // 鼠标离开盒子 隐藏遮罩和大图
+        $('smallBox').onmouseout = function () {
+            //隐藏遮罩和大图
+            $('mask').style.display = 'none';
+            $('bigBox').style.display = 'none';
+        };
+        //  鼠标在盒子上移动的时候
+        //  让遮罩跟着鼠标移动
+        $('smallBox').onmousemove = function (event) {
+            // console.log('在盒子上了');
+            var event = event || window.event;
+            //鼠标在页面中的坐标
+            var pageX = event.pageX || event.clientX + document.documentElement.scrollLeft;
+            var pageY = event.pageY || event.clientY + document.documentElement.scrollTop;
+
+            //  计算鼠标的位置 距 盒子 的距离
+            var boxX = pageX - $('box').offsetLeft;
+            var boxY = pageY - $('box').offsetTop;
+            console.log(boxX);
+            console.log(boxY);
+            console.log('upup 计算鼠标的位置 距 盒子 的距离');
+            // 计算遮罩的位置
+            var maskX = boxX - $('mask').offsetWidth / 2;
+            var maskY = boxY - $('mask').offsetHeight / 2;
+            console.log(maskX);
+            console.log(maskY);
+            console.log('upup 计算遮罩的位置');
+            // 限定遮罩可移动范围
+            if (maskX < 0) {
+                maskX = 0;
+            }
+            if (maskX > $('smallBox').offsetWidth - $('mask').offsetWidth) {
+                maskX = $('smallBox').offsetWidth - $('mask').offsetWidth;
+            }
+            if (maskY < 0) {
+                maskY = 0;
+            }
+            if (maskY > $('smallBox').offsetHeight - $('mask').offsetHeight) {
+                maskY = $('smallBox').offsetHeight - $('mask').offsetHeight;
+            }
+            //  修改遮罩的显示位置
+            $('mask').style.left = maskX - 70 + 'px';
+            $('mask').style.top = maskY - 70 + 'px';
+            // 按照比例移动大图 大图片能够移动的总距离 = 大图的宽度 - 大盒子的宽度
+            var bigImgToMove = $('bigImg').offsetWidth - $('bigBox').offsetWidth;
+            // 遮罩能够移动的总距离 = 小盒子的宽度 - 遮罩的宽度
+            var maskToMove = $('smallBox').offsetWidth - $('mask').offsetWidth;
+            // 计算移动比例rate = 大图片能够移动的总距离/遮罩能够移动的总距离
+            var rate = bigImgToMove / maskToMove;
+            // 设置大图片当前的位置 = rate * 遮罩当前的位置
+            $('bigImg').style.left = - rate * maskX + 'px';
+            $('bigImg').style.top = - rate * maskY + 'px';
+        };
+
+
+    </script>
+
+    <script>
+        // 省份数组
+        var provinceArr = ['上海', '江苏', '河北'];
+        // 城市数组
+        var cityArr = [
+            ['上海市'],
+            ['苏州市', '南京市', '扬州市'],
+            ['石家庄', '秦皇岛', '张家口']
+        ];
+        // 区域数组
+        var countryArr = [
+            [
+                ['黄浦区', '静安区', '长宁区', '浦东区']
+            ],
+            [
+                ['虎丘区', '吴中区', '相城区', '姑苏区', '吴江区'],
+                ['玄武区', '秦淮区', '建邺区', '鼓楼区', '浦口区'],
+                ['邗江区', '广陵区', '江都区']
+            ],
+            [
+                ['长安区', '桥西区', '新华区', '井陉矿区'],
+                ['海港区', '山海关区', '北戴河区', '抚宁区'],
+                ['桥东区', '桥西区', '宣化区', '下花园区']
+            ]
+        ];
+        // 第1步
+        function createOption(obj, data) {
+            for (var i in data) {
+                var op = new Option(data[i], i);   // 创建下拉列表中的option选项
+                obj.options.add(op);               // 将选项添加到下拉列表中
+            }
+        }
+        var province = document.getElementById('province');
+        createOption(province, provinceArr);
+        // 第2步
+        var city = document.getElementById('city');
+        province.onchange = function () {
+            city.options.length = 0;        // 清空city下的原有<option>
+            createOption(city, cityArr[province.value]);
+            if (province.value >= 0) {
+                city.onchange();              // 自动添加 城市对应区域 下拉列表  
+            } else {
+                country.options.length = 0;   // 清空country下的原有<option>
+            }
+        };
+        // 第3步
+        var country = document.getElementById('country');
+        city.onchange = function () {
+            country.options.length = 0;     // 清空country下的所有原有<option>
+            createOption(country, countryArr[province.value][city.value]);
+        };
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

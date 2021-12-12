@@ -1,0 +1,75 @@
+#gouwuche-contain {
+    margin-top: 80px;
+    padding-bottom: 80px;
+}
+
+#gouwuche-nav {
+    background-color: #f3f3f3;
+    padding: 1%;
+    text-align: center;
+}
+
+#gouwuche-all {
+    font-size: 18px;
+    font-weight: bold;
+    color: #3776b4;
+}
+
+#gouwuche-num {
+    font-size: 20px;
+    font-weight: bold;
+    color: #3776b4;
+    margin-left: 1%;
+}
+
+.gouwuche-store-contain {
+    margin-top: 2%;
+}
+
+#gouwuche-store-name {
+    font-weight: bold;
+    color: rgb(109, 106, 106);
+}
+
+#gouwuche-good-contain {
+    font-weight: lighter;
+    border: 1px solid rgb(216, 216, 216);
+    display: flex;
+    align-items: center;
+    padding: 1% 0;
+    color: grey;
+}
+
+#gouwuche-goood-detail span {
+    margin-left: 1%;
+}
+
+#gouwuche-good-num {
+    width: 45px;
+    height: 38px;
+    text-align: center;
+}
+
+#gooods-count {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#gouwuche-op {
+    display: flex;
+    flex-direction: column;
+}
+
+#gouwuche-op span:hover {
+    color: #0580fc;
+}
+
+.gouwuche-footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    background-color: rgb(250, 246, 246);
+    padding: 5px;
+    color: gray;
+    font-size: 14px;
+}
