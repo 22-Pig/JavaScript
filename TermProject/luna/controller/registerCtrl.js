@@ -18,12 +18,9 @@ module.exports = {
                 // console.log("registerCtrl:" + data.length);
                 console.log("registerCtrl:" + data);
                 if (data) {
-                    // resp.redirect("/page/shop.html");
                     resp.send({ succ: true });
                 } else {
                     resp.send({ succ: false });
-                    // resp.redirect("/page/shop.html");
-                    // resp.redirect("/page/user.html");
                 }
             }
         });
