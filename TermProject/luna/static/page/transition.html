@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition</title>
+    <link rel="stylesheet" href="/css/transition.css">
+
+</head>
+
+<body>
+    <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+    <h2 style="color: white;">正在登录中...</h2>
+    <script>
+        function timing(secs, url) {
+            secs--;
+            if (secs > 0) {
+                setTimeout('timing(' + secs + ', \'' + url + '\')', 1000);
+            } else {
+                location.href = url;
+            }
+        };
+        timing(4, 'home.html');
+    </script>
+</body>
+
+</html>
